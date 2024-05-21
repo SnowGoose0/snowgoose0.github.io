@@ -1,0 +1,14 @@
+.menu-list {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/*
+.menu-list:nth-child(odd) {
+  transform: skew(60deg, -30deg) scaleY(0.666667);
+}
+
+.menu-list:nth-child(odd) {
+  transform: skew(0deg, -30deg) scaleY(1.333333);
+}
+*/

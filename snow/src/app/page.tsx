@@ -1,5 +1,5 @@
-import Image from "next/image";
-import "./menu.css";
+import Image from 'next/image';
+import React from 'react';
 
 interface Tab {
     label: string;
@@ -10,17 +10,17 @@ export default function Home() {
     const offset = 10;
 
     const tabNames: Tab[] = [
-        { label: "About", path: "/welcome" },
-        { label: "Experience", path: "/experience" },
-        { label: "Education", path: "/education" },
-        { label: "Projects", path: "/projects" },
-        { label: "Full Resume", path: "/full%20resume" },
+        { label: 'About', path: '/welcome' },
+        { label: 'Experience', path: '/experience' },
+        { label: 'Education', path: '/education' },
+        { label: 'Projects', path: '/projects' },
+        { label: 'Full Resume↓', path: '/full%20resume' },
     ];
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <main className='flex min-h-screen flex-col items-center justify-center p-24'>
             <ul
-                className="menu-list font-mono text-2xl"
+                className='menu-list text-2xl'
                 style={{
                     transform: `translateX(-${(offset * tabNames.length) / 2}px)`,
                 }}
@@ -30,17 +30,19 @@ export default function Home() {
                         key={index}
                         className={index % 2 ? `skew-odd ` : `skew-even `}
                         style={{
-                            position: "relative",
+                            position: 'relative',
                             left: `${index * offset}px`,
                         }}
                     >
                         <a
                             href={menuItems.path}
-                            className="cursor-pointer 
+                            className='cursor-pointer 
                                         hover:text-blue-500 
                                         select-none
+                                        uppercase
+                                        font-bold
                                         transition-all
-                                        duration-300"
+                                        duration-300'
                         >
                             {menuItems.label}
                         </a>

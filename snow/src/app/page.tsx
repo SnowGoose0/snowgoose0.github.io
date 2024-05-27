@@ -20,7 +20,7 @@ export default function Home() {
     return (
         <main className='flex min-h-screen flex-col items-center justify-center p-24'>
             <ul
-                className='menu-list text-2xl'
+                className='menu-list text-4xl'
                 style={{
                     transform: `translateX(-${(offset * tabNames.length) / 2}px)`,
                 }}

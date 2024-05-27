@@ -27,11 +27,11 @@ export default function About() {
 
     return (
         <main
-            className='flex flex-col justify-center items-center 
-                    lg:mx-52 md:mx-24 sm:mx-12 mx-4
-                    lg:text-base md:text-sm text-xs'
+            className='flex-col justify-center items-center 
+                    lg:mx-64 md:mx-32 sm:mx-24 mx-4
+                    lg:text-lg md:text-base text-sm'
         >
-            <article className='justify-center font-thin min-h-screen'>
+            <article className='font-thin min-h-screen'>
                 <Bar />
                 <section className='flex'>
                     <figure>
@@ -53,28 +53,53 @@ export default function About() {
                 engineer, I have developed my skills in a variety of areas and 
                 technolgies. Most recently, I have been learning more about web 
                 development using technolgies like Next.js, Express.js, Firebase, 
-                and SQL with Supabase. I've also been honing my C and C++ skills 
-                through my personal projects and work experience. `}</p>
+                and SQL with Supabase.`}</p>
                         <br />
                         <p>
                             {`When I'm not coding or studying, you can find me 
                 playing/watching basketball, making 3D art, hiking, or 
                 just lying in my bed.`}
                         </p>
+                        <br /> <br />
+                        <p className=''>Learn more about my:</p>
+                        <ul className='cursor-pointer underline'>
+                            <li className='ml-8'>
+                                <a href='/experience'>Experience</a>
+                            </li>
+                            <li className='ml-8'>
+                                <a href='/projects'>Projects</a>
+                            </li>
+                            <li className='ml-8'>
+                                <a href='/education'>Education</a>
+                            </li>
+                            <li className='ml-8'>
+                                <a href='#art'>Art</a>
+                            </li>
+                        </ul>
                     </section>
                 </section>
             </article>
-            <article className='min-h-screen mt-32 mb-32'>
+            <article
+                id='art'
+                className='flex justify-center flex-wrap min-h-screen my-32'
+            >
                 {gallery.map((img, index) => {
                     return (
-                        <Image
-                            className='mt-28 transition-all hover:scale-105 duration-500'
-                            key={index}
-                            src={imgBasePath + img}
-                            alt={`Gallery ${index}`}
-                            width={500}
-                            height={600}
-                        ></Image>
+                        <figure key={index} className='mt-28 w-1/2'>
+                            <Image
+                                className='p-4
+                                    transition-all hover:scale-105 duration-500'
+                                key={index}
+                                src={imgBasePath + img}
+                                alt={`Gallery ${index}`}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                }}
+                                width={500}
+                                height={500}
+                            ></Image>
+                        </figure>
                     );
                 })}
             </article>
